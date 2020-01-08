@@ -9,6 +9,7 @@ public class Triggers : MonoBehaviour
 
     public GameObject[] Save;
     public GameObject counter;
+    public GameObject Key;
 
     public float timeVal;
 
@@ -17,11 +18,12 @@ public class Triggers : MonoBehaviour
     public Text tiempoPartida;
 
     bool notSave;
+    public bool haveKey;
 
 
     void Start()
     {
-        
+        haveKey = false;
     }
 
     void Update()
@@ -63,6 +65,14 @@ public class Triggers : MonoBehaviour
                 notSave = false;
                 timeVal=5f;
                 tiempoPartida.text=timeVal.ToString("00");
+            break;
+
+            case "Key":
+                if (Input.GetKey(KeyCode.E)){
+                Key.SetActive(false);
+                haveKey = true;
+                }
+                    
             break;
         }
     }
