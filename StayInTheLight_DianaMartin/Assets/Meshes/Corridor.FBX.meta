@@ -11,7 +11,17 @@ ModelImporter:
     3300000: //RootNode
     4300000: Corridor
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: d0ce14de42540d243ae92c3efb77eca7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood01
+    second: {fileID: 2100000, guid: fc29e065656e3b649927056ef66a56b1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

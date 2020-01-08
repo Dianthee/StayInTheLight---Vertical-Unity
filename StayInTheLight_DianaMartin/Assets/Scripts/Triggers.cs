@@ -55,7 +55,7 @@ public class Triggers : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider Save) {
+    void OnTriggerStay(Collider Save) {
                 
         switch (Save.tag)
         {
@@ -68,11 +68,18 @@ public class Triggers : MonoBehaviour
             break;
 
             case "Key":
-                if (Input.GetKey(KeyCode.E)){
+                if (Input.GetKeyDown(KeyCode.E)){
                 Key.SetActive(false);
                 haveKey = true;
                 }
                     
+            break;
+
+            case "Door":
+
+                if(Input.GetKeyDown(KeyCode.F) && Key){
+                    
+                }
             break;
         }
     }

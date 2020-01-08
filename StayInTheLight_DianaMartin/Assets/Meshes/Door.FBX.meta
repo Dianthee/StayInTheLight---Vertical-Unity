@@ -19,7 +19,17 @@ ModelImporter:
     4300002: Door
     6400000: Border_Door
     6400002: Door
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #271'
+    second: {fileID: 2100000, guid: df034a21a2ce79f4ba2d750444c4e1f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #272'
+    second: {fileID: 2100000, guid: c459ff73982662a44ad653b8a6f2a916, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
