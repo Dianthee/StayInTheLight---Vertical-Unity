@@ -7,6 +7,7 @@ TagManager:
   - YouAreSaveHere
   - Key
   - Door
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - PostProcessing
   - Door
-  - 
+  - Escape
   - 
   - 
   - 

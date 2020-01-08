@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6544072498950343223}
+  - component: {fileID: 2049710997440189448}
+  - component: {fileID: 8936972732042073097}
   m_Layer: 0
   m_Name: Door_Exit
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +34,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049710997440189448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989943080087628235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2546ee5eb53cfc4479ffcfc6c7df50b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exit: {fileID: 1812468077370708462}
+  door: {fileID: 7149025060687952911}
+--- !u!65 &8936972732042073097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989943080087628235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5889751, y: 2.454338, z: 0.752779}
+  m_Center: {x: -0.11408168, y: 1.5106812, z: -6.2939997}
 --- !u!1001 &1812468077370742606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41,6 +70,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95, type: 3}
       propertyPath: m_Name
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95, type: 3}
+      propertyPath: m_TagString
       value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95, type: 3}
@@ -57,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.1042805
+      value: -6.15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95, type: 3}
       propertyPath: m_LocalRotation.x
@@ -105,6 +138,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95, type: 3}
+--- !u!1 &1812468077370708462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1812468077370742606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1812468077370871246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 98bfc26c4c221e74eaa90a70e6d2bc95,
@@ -125,10 +164,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ceaa2a9bd5b6b9e44b6ea46ffa8a59cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: ceaa2a9bd5b6b9e44b6ea46ffa8a59cb, type: 3}
-      propertyPath: m_TagString
-      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ceaa2a9bd5b6b9e44b6ea46ffa8a59cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,6 +214,12 @@ PrefabInstance:
 --- !u!4 &7149025060687978537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: ceaa2a9bd5b6b9e44b6ea46ffa8a59cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7149025060687854251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7149025060687952911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: ceaa2a9bd5b6b9e44b6ea46ffa8a59cb,
     type: 3}
   m_PrefabInstance: {fileID: 7149025060687854251}
   m_PrefabAsset: {fileID: 0}
