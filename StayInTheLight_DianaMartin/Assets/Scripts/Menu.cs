@@ -5,16 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
-	public void NewGame(){
+	public void TutorialGame(){
+	
+		SceneManager.LoadScene (1);
+	}
+
+	public void NormalGame(){
 	
 		SceneManager.LoadScene (2);
 	}
 
-	 public void OpenURL()
-      {
-          //Application.OpenURL("https://twitter.com/weasel_games_st");
-      }
-
+	
 	public void Quit(){
 	
 		Application.Quit ();
