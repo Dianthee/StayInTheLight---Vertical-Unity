@@ -4897,7 +4897,7 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: wasdOut
       value: 
-      objectReference: {fileID: 1580140168}
+      objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_CollisionDetection
       value: 3
@@ -8157,7 +8157,7 @@ Animator:
   m_GameObject: {fileID: 1436532089}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f9d714a3e227c245bc2cb2ebe0fb1a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 06a97548ab042e74e96a6826d9390bc8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9413,7 +9413,7 @@ Animator:
   m_GameObject: {fileID: 1580140166}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f9d714a3e227c245bc2cb2ebe0fb1a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 06a97548ab042e74e96a6826d9390bc8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
