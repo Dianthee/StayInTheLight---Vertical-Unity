@@ -12,12 +12,15 @@ public class Triggers : MonoBehaviour
     public GameObject Key;
     public GameObject crying;
 
+    public GameObject pressE;
+    public GameObject textoVictoria;
+    public GameObject textoDerrota;
+
     public AudioSource audios;
 
     public float timeVal;
 
-    public Text textoVictoria;
-    public Text textoDerrota;
+    
     public Text tiempoPartida;
 
     bool notSave;
@@ -43,6 +46,11 @@ public class Triggers : MonoBehaviour
 
     }
 
+    public void Invoke()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     void Timer(){
 
         tiempoPartida.text=timeVal.ToString("00");
@@ -54,12 +62,19 @@ public class Triggers : MonoBehaviour
 
         if(timeVal<=0.0f){
             Debug.Log("Tiempo a 0");
-             //scriptBola.GetComponent<BALLCONTROLLER>().ballSpeed = 0;
-             textoDerrota.gameObject.SetActive(true);
+            textoDerrota.gameObject.SetActive(true);
+            FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().GetComponent<CharacterController>().enabled = false;
+            Invoke("TestInvoke",2f);
         }
 
 
     }
+
+    public void TestInvoke()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        }
 
     void OnTriggerStay(Collider Save) {
                 
@@ -69,15 +84,18 @@ public class Triggers : MonoBehaviour
                 Debug.Log("Now you are on a safe place!");
                 counter.SetActive(false);
                 notSave = false;
-                timeVal=5f;
+                timeVal=7f;
                 tiempoPartida.text=timeVal.ToString("00");
             break;
 
             case "Key":
+                pressE.SetActive(true);
+
                 if (Input.GetKeyDown(KeyCode.E)){
-                Key.SetActive(false);
-                haveKey = true;
-                getKey.SetBool("GetKet",true);
+                    Key.SetActive(false);
+                    haveKey = true;
+                    getKey.SetTrigger("Start");
+                    pressE.SetActive(false);
                 }
                     
             break;
@@ -99,5 +117,12 @@ public class Triggers : MonoBehaviour
 
         notSave = true;
         Debug.Log("You aren't safe here!");
+
+        switch (Save.tag)
+        {
+         case "Key":
+                pressE.SetActive(false);
+            break;
+        }
     }
 }

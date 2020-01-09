@@ -45,10 +45,43 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
-        public Animator wasdOut;
-        public Animator haveKey;
+        public Animator wasd, fade, find;
+
+        IEnumerator AnimatorCorroutine()
+        {
+            
+            yield return new WaitForSeconds(0.45f);
+
+            wasd.SetTrigger("Start");
+
+            bool completed = false;
+            
+            while (!completed)
+            {
+
+                Debug.Log("BULCU");
+                if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) && Input.GetKeyDown(KeyCode.LeftShift))
+                    completed = true;
+                
+                if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+                    completed = true;
+
+                yield return null;
+            }
+
+            wasd.SetTrigger("Close");
+
+            Invoke("TestInvoke", 1f);
 
 
+        }
+
+
+        public void TestInvoke()
+        {
+            find.SetTrigger("Start");
+
+        }
         // Use this for initialization
         private void Start()
         {
@@ -62,6 +95,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            StartCoroutine(AnimatorCorroutine());
         }
 
               // Update is called once per frame
@@ -116,9 +151,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)){
-                wasdOut.SetBool("KeyPressedW",true);
-            }
+
 
             if (m_CharacterController.isGrounded)
             {
