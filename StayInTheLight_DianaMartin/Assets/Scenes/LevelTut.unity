@@ -3229,6 +3229,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 7149025060687952911, guid: 30b7f6f8cc532654ab12b464d4139f98,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1812468077370871246, guid: 30b7f6f8cc532654ab12b464d4139f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3238,11 +3243,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -6.248
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149025060687952911, guid: 30b7f6f8cc532654ab12b464d4139f98,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b7f6f8cc532654ab12b464d4139f98, type: 3}
