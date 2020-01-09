@@ -4,6 +4,8 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -43,6 +45,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public Animator wasdOut;
+        public Animator haveKey;
+
 
         // Use this for initialization
         private void Start()
@@ -57,7 +62,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-
         }
 
               // Update is called once per frame
@@ -65,6 +69,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
         
+            
             // the jump state needs to read here to make sure it is not missed
             // if (!m_Jump)
             // {
@@ -86,7 +91,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
-
+      
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;
@@ -111,6 +116,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)){
+                wasdOut.SetBool("KeyPressedW",true);
+            }
 
             if (m_CharacterController.isGrounded)
             {

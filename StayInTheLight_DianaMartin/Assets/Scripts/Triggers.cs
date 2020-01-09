@@ -10,6 +10,9 @@ public class Triggers : MonoBehaviour
     public GameObject[] Save;
     public GameObject counter;
     public GameObject Key;
+    public GameObject crying;
+
+    public AudioSource audios;
 
     public float timeVal;
 
@@ -20,10 +23,13 @@ public class Triggers : MonoBehaviour
     bool notSave;
     public bool haveKey;
 
+    public Animator getKey;
+
 
     void Start()
     {
         haveKey = false;
+        audios = crying.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -71,6 +77,7 @@ public class Triggers : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E)){
                 Key.SetActive(false);
                 haveKey = true;
+                getKey.SetBool("GetKet",true);
                 }
                     
             break;
@@ -80,6 +87,10 @@ public class Triggers : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.F) && Key){
                     
                 }
+            break;
+
+            case "Crying":
+                audios.Play();
             break;
         }
     }

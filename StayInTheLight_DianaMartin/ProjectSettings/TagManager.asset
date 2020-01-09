@@ -8,6 +8,7 @@ TagManager:
   - Key
   - Door
   - Exit
+  - Crying
   layers:
   - Default
   - TransparentFX
