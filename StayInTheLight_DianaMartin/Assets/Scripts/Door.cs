@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -16,23 +17,52 @@ public class Door : MonoBehaviour
         exit.SetActive(true);
     }
 
-    IEnumerator  OpenDoor(){
+    //-90 z
+
+    [ContextMenu("Open This Door")]
+    private void OpenDoor()
+    {
+        StartCoroutine(OpeningDoor());
+    }
+
+    IEnumerator  OpeningDoor(){
 
         Debug.Log("Opening door");
+        Quaternion newRotation = door.transform.rotation;
+        newRotation *= Quaternion.Euler(0, 0, -90); // this add a 90 degrees Y rotation
+
         while (true)
         {
+
+            door.transform.rotation = Quaternion.RotateTowards(door.transform.rotation, newRotation, 25f * Time.deltaTime);
+
+
+
+
             yield return null;
         }
 
     }
 
+     public void Invoke()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     private void OnTriggerStay(Collider other) {
-        if(other.tag == "Player")
-            if (FindObjectOfType<Triggers>().haveKey && Input.GetKeyDown(KeyCode.F))
-                if (!isOpen)
-                {
-                    StartCoroutine(OpenDoor());
-                    isOpen = true;
-                }
+
+         if(other.tag == "Player"){
+             if (FindObjectOfType<Triggers>().haveKey && Input.GetKeyDown(KeyCode.F)){
+                 
+                if (!isOpen){
+                     StartCoroutine(OpeningDoor());
+                     isOpen = true;
+                     FindObjectOfType<Triggers>().notSave = false;
+                     FindObjectOfType<Triggers>().Finish.SetActive(true);
+                     FindObjectOfType<Triggers>().finishLev.SetTrigger("Finish");
+                     Invoke("Invoke",5f);
+                 }
+             }
+        }
     }
 }

@@ -11,28 +11,31 @@ public class Triggers : MonoBehaviour
     public GameObject counter;
     public GameObject Key;
     public GameObject crying;
+    public GameObject soundKey;
 
     public GameObject pressE;
-    public GameObject textoVictoria;
+    public GameObject Finish;
     public GameObject textoDerrota;
 
     public AudioSource audios;
+    public AudioSource keys;
 
     public float timeVal;
 
     
     public Text tiempoPartida;
 
-    bool notSave;
+    public bool notSave;
     public bool haveKey;
 
-    public Animator getKey;
+    public Animator getKey, finishLev;
 
 
     void Start()
     {
         haveKey = false;
         audios = crying.GetComponent<AudioSource>();
+        keys = soundKey.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -92,19 +95,13 @@ public class Triggers : MonoBehaviour
                 pressE.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E)){
+                    keys.Play();
                     Key.SetActive(false);
                     haveKey = true;
                     getKey.SetTrigger("Start");
                     pressE.SetActive(false);
                 }
                     
-            break;
-
-            case "Door":
-
-                if(Input.GetKeyDown(KeyCode.F) && Key){
-                    
-                }
             break;
 
             case "Crying":
