@@ -57,6 +57,7 @@ public class Door : MonoBehaviour
                 if (!isOpen){
                      StartCoroutine(OpeningDoor());
                      isOpen = true;
+                     FindObjectOfType<Triggers>().openDoor.Play();
                      FindObjectOfType<Triggers>().notSave = false;
                      FindObjectOfType<Triggers>().Finish.SetActive(true);
                      FindObjectOfType<Triggers>().finishLev.SetTrigger("Finish");

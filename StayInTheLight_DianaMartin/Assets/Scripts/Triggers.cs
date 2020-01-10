@@ -12,6 +12,7 @@ public class Triggers : MonoBehaviour
     public GameObject Key;
     public GameObject crying;
     public GameObject soundKey;
+    public GameObject soundOpen;
 
     public GameObject pressE;
     public GameObject Finish;
@@ -19,6 +20,7 @@ public class Triggers : MonoBehaviour
 
     public AudioSource audios;
     public AudioSource keys;
+    public AudioSource openDoor;
 
     public float timeVal;
 
@@ -36,6 +38,7 @@ public class Triggers : MonoBehaviour
         haveKey = false;
         audios = crying.GetComponent<AudioSource>();
         keys = soundKey.GetComponent<AudioSource>();
+        openDoor = soundOpen.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -87,7 +90,7 @@ public class Triggers : MonoBehaviour
                 Debug.Log("Now you are on a safe place!");
                 counter.SetActive(false);
                 notSave = false;
-                timeVal=7f;
+                timeVal=4f;
                 tiempoPartida.text=timeVal.ToString("00");
             break;
 

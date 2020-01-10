@@ -144,8 +144,9 @@ Transform:
   - {fileID: 1549211542}
   - {fileID: 1165232237}
   - {fileID: 1903831446}
+  - {fileID: 533056075}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &16094534
 GameObject:
@@ -2894,12 +2895,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533056072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.025022874, y: 1.6655594, z: -5.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 7200348}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &563773850
 PrefabInstance:
@@ -3652,6 +3653,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2049710997440189448, guid: 30b7f6f8cc532654ab12b464d4139f98,
+        type: 3}
+      propertyPath: pressF
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1812468077370871246, guid: 30b7f6f8cc532654ab12b464d4139f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3661,11 +3667,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -6.248
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049710997440189448, guid: 30b7f6f8cc532654ab12b464d4139f98,
-        type: 3}
-      propertyPath: pressF
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b7f6f8cc532654ab12b464d4139f98, type: 3}
@@ -8718,7 +8719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1436532090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11373,7 +11374,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a69fa52b31389534685f348ddbb71235, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 3
   Loop: 0
@@ -11806,11 +11807,13 @@ MonoBehaviour:
   Key: {fileID: 397803441}
   crying: {fileID: 533056072}
   soundKey: {fileID: 1165232236}
+  soundOpen: {fileID: 1903831445}
   pressE: {fileID: 1602153300}
   Finish: {fileID: 656958191}
   textoDerrota: {fileID: 2026518350}
   audios: {fileID: 533056073}
   keys: {fileID: 1165232238}
+  openDoor: {fileID: 1903831447}
   timeVal: 7
   tiempoPartida: {fileID: 2076392014}
   notSave: 0
